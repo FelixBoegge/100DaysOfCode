@@ -1,5 +1,5 @@
-num	name	type	max_hp	dam	status
-1	Bulbasaur	grass	3	1	active
+Number	Name	Type	HP	Damage	Status
+1	Bulbasaur	water	3	1	active
 2	Ivysaur	grass	5	2	active
 3	Venusaur	grass	10	3	active
 4	Exeggcute	grass	4	1	active
@@ -31,3 +31,6 @@ num	name	type	max_hp	dam	status
 30	Zapdos	electric	12	4	active
 31	Felix	fire	15	8	active
 32	Yasmym	water	20	2	active
+33	Jonas	water	5	3	active
+34	Tim	rock	2	3	active
+35	Lukas	fire	3	4	aktive
