@@ -53,3 +53,13 @@ L1[3:3]= [6, 7, 8]
 print(L1)
 L2 = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 print(L2[-2::-2])
+
+g = ['A', 'B', 'C', 'D', 'E', 'F', 'G']
+print(g[-3:-6:-1])
+print(g[-3:])
+print(g[:-6])
+print(g[-1:-3:-1])
+print("Test:")
+print(g[:3:-1])
+print(g[-9::1])
+print(g[-2::-2])
