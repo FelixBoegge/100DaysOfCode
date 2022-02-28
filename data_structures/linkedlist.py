@@ -112,13 +112,15 @@ class Linkedlist:
             itr = itr.next
 
 
-if __name__== '__main__':
+if __name__ == '__main__':
     ll = Linkedlist()
     ll.insert_values(['apple', 'mango', 'banana', 'passionfruit'])
     print("length: ", ll.get_length())
     ll.insert(2, 'grapes')
     ll.print()
     ll.remove('banana')
+    ll.print()
+    ll.append('papaya')
     ll.print()
     ll.insert_behind_val('passionfruit', 'cherry')
     ll.print()
