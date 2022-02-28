@@ -81,3 +81,5 @@ for day in Tem:
 avg = [avg[_]//len(Tem) for _ in range(m)]
 Tem.append(avg)
 prit(Tem)
+
+
