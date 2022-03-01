@@ -15,8 +15,13 @@ class Stack:
     def get_all(self):
         return self.items
 
+    def is_empty(self):
+        if len(self.items) == 0:
+            return True
+
 
 users = Stack()
+print(users.is_empty())
 users.push('Yasmym')
 users.push('Felix')
 users.push('Lukas')
@@ -27,4 +32,5 @@ removed_user = users.pop()
 print(removed_user)
 print(users.get_all())
 
-users.peek()
+print(users.peek())
+print(users.is_empty())
