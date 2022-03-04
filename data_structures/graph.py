@@ -5,7 +5,8 @@ class Vertex:
 
         self.discovery = 0
         self.finish = 0
-        self.color = 'black'
+        self.status = 'undiscovered'
+        self.distance = 9999
 
     def add_neighbors(self, v):
         nset = set(self.neighbors)
@@ -37,25 +38,49 @@ class Graph:
             return False
 
     def print_graph(self):
+        amount_neighbors = []
         for key in sorted(list(self.vertices.keys())):
-            print(key + str(self.vertices[key].neighbors) + "  " + str(self.vertices[key].discovery) + "/" + str(self.vertices[key].finish))
+            amount_neighbors.append(len(self.vertices[key].neighbors))
+        for key in sorted(list(self.vertices.keys())):
+            print(key + str(self.vertices[key].neighbors).ljust(1+5*max(amount_neighbors)) + str(self.vertices[key].discovery) + "/" + str(self.vertices[key].finish) + " Distance: " + str(self.vertices[key].distance))
 
     def _dfs(self, vertex):
         global time
-        vertex.color = 'red'
+        vertex.status = 'discovered'
         vertex.discovery = time
         time += 1
         for v in vertex.neighbors:
-            if self.vertices[v].color == 'black':
+            if self.vertices[v].status == 'undiscovered':
                 self._dfs(self.vertices[v])
-        vertex.color = 'blue'
+        vertex.status = 'finished'
         vertex.finish = time
         time += 1
 
-    def dfs(self, vertex):
+    def dfs(self, start):
         global time
         time = 1
-        self._dfs(vertex)
+        self._dfs(start)
+
+    def bfs(self, vertex):
+        queue = list()
+        vertex.distance = 0
+        vertex.status = 'visited'
+        for v in vertex.neighbors:
+            self.vertices[v].distance = vertex.distance + 1
+            queue.append(v)
+
+        while len(queue) > 0:
+            current = self.vertices[queue.pop(0)]
+            current.status = 'visited'
+            for v in current.neighbors:
+                next = self.vertices[v]
+                if next.status == 'undiscovered':
+                    queue.append(v)
+                    if next.distance > current.distance + 1:
+                        next.distance = current.distance + 1
+
+
+
 
 g = Graph()
 a = Vertex('A')
@@ -67,6 +92,11 @@ for i in range(ord('A'), ord('K')):
 edges = ['AB', 'AE', 'BF', 'CG', 'DE', 'DH', 'EH', 'FG', 'FI', 'FJ', 'GJ', 'HI']
 for edge in edges:
     g.add_edge(edge[:1], edge[1:])
+m = Vertex('M')
+g.add_vertex(m)
+g.add_edge('C', 'M')
+g.add_edge('F', 'M')
 
-g.dfs(a)
+#g.dfs(a)
+g.bfs(m)
 g.print_graph()
