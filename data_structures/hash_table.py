@@ -12,6 +12,7 @@ class HashTable:
             h += ord(c)
         return h % self.MAX
 
+
     def __setitem__(self, key, value):
         h = self.get_hash(key)
         found = False
@@ -22,6 +23,7 @@ class HashTable:
                 break
         if not found:
             self.arr[h].append((key, value))
+
 
     def __getitem__(self, key):
         h = self.get_hash(key)
