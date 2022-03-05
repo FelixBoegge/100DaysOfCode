@@ -19,11 +19,11 @@ class Stack:
         return self.items
 
     def is_empty(self):
-        if len(self.items) == 0:
-            return True
+        return len(self.items) == 0
 
 
 users = Stack()
+nums = Stack()
 print(users.is_empty())
 users.push('Yasmym')
 users.push('Felix')
@@ -37,3 +37,4 @@ print(users.get_all())
 
 print(users.peek())
 print(users.is_empty())
+print(nums.is_empty())

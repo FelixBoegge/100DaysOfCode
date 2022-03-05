@@ -1,27 +1,30 @@
+from collections import deque
+
+
 class Queue:
     def __init__(self):
-        self.items = []
+        self.items = deque()
 
     def add(self, item):
-        self.items.append(item)
+        self.items.appendleft(item)
 
     def remove(self):
-        return self.items.pop(0)
+        return self.items.pop()
 
     def peek(self):
         if not len(self.items) == 0:
-            return self.items[-1]
+            return self.items[0]
 
     def next(self):
         if not len(self.items) == 0:
-            return self.items[0]
+            return self.items[-1]
 
     def get_all(self):
         return self.items
 
     def is_empty(self):
-        if len(self.items) == 0:
-            return True
+        return len(self.items) == 0
+
 
 a = Queue()
 a.add(10)
