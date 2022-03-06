@@ -97,6 +97,6 @@ g.add_vertex(m)
 g.add_edge('C', 'M')
 g.add_edge('F', 'M')
 
-g.dfs(a)
-#g.bfs(m)
+#g.dfs(a)
+g.bfs(m)
 g.print_graph()
