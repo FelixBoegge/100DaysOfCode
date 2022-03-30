@@ -1,6 +1,5 @@
 def add_bits(Bs, Bt):
-    length = max(len(Bs), len(Bt))
-    for i in reversed(range(length)):
+    for i in reversed(range(len(Bs))):
         Bs[i] += Bt[i]
         if Bs[i] > 1:
             Bs[i] -= 2
