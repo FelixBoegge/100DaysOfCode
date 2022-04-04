@@ -3,13 +3,10 @@ def generate(numRows: int):
         return []
     rows = [[1]]
     for i in range(1, numRows):
-        current = []
-        for j in range(i + 1):
-            if j == 0 or j == i:
-                next = 1
-            else:
-                next = rows[-1][j - 1] + rows[-1][j]
-            current.append(next)
+        current = [1]
+        for j in range(1, i):
+            current.append(rows[-1][j - 1] + rows[-1][j])
+        current.append(1)
         rows.append(current)
     return rows
 
