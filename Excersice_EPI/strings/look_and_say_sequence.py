@@ -1,3 +1,6 @@
+import itertools
+
+
 def look_and_say(n: int) -> str:
     def next_number(s):
         result, i = [], 0
@@ -15,5 +18,13 @@ def look_and_say(n: int) -> str:
         s = next_number(s)
     return s
 
+# pythonic approach
+def look_say(n):
+    s = '1'
+    for _ in range(n-1):
+        s = ''.join(str(len(list(group))) + key for key, group in itertools.groupby(s))
+    return s
+
 n = 5
 print(look_and_say(n))
+print(look_say(n))
