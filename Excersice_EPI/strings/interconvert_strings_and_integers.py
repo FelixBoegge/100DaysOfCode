@@ -21,7 +21,7 @@ def string_to_int(s: str) -> int:
 
 x = 123
 y = -234
-s = '+45'
+s = '7145'
 
 print(int_to_string(x))
 print(int_to_string(y))
