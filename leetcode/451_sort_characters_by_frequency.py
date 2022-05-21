@@ -1,6 +1,5 @@
 def frequencySort(s: str) -> str:
     count = {}
-    freq = []
     out = ""
     for c in s:
         if c in count.keys():
