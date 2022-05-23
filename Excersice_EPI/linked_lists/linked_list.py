@@ -49,3 +49,13 @@ class Linked_list:
             print(current.data, "--> ", end='')
             current = current.next
         print("None")
+
+
+    def make_cycle(self): # contect the tail-Node with the head-Node
+        current = self.head
+        while True:
+            if current.next == None:
+                current.next = self.head
+                break
+            current = current.next
+
