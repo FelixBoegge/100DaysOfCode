@@ -59,3 +59,17 @@ class Linked_list:
                 break
             current = current.next
 
+
+    def connect(self, L, num):
+        def attach_to(L, num):
+            cur = L.head
+            for _ in range(num):
+                cur = cur.next
+            return cur
+
+        current = self.head
+        while True:
+            if current.next == None:
+                current.next = attach_to(L, num-1)
+                break
+            current = current.next
