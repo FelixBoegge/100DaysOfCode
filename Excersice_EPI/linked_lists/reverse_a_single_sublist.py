@@ -11,7 +11,6 @@ M.append(Node(2))
 M.print_ll()
 
 def reverse_sublist(L, s, f):
-    L = L.head
     dummy_head = sublist_head = Node(0, L)
 
     for _ in range(1, s):
@@ -24,4 +23,4 @@ def reverse_sublist(L, s, f):
 
     return dummy_head.next
 
-reverse_sublist(M, 2, 4).print_ll_from()
+reverse_sublist(M.head, 2, 4).print_ll_from()
