@@ -1,4 +1,4 @@
-from stack import Stack
+from stack_max import Stack
 
 
 def valid_parenthesis(par):
