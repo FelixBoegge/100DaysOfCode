@@ -1,4 +1,4 @@
-from stack_max import Stack
+from stack import Stack
 
 
 def valid_parenthesis(par):
@@ -9,9 +9,9 @@ def valid_parenthesis(par):
             s.push(p)
         elif s.empty() or pairs[s.pop()] != p:
                 return False
-    return not s.empty()
+    return s.empty()
 
 a = '()[]{}'
 b = '[{)){[}'
 
-print(valid_parenthesis(a))
+print(valid_parenthesis(b))
