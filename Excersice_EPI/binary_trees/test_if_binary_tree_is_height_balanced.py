@@ -35,9 +35,8 @@ L.left = M
 L.right = N
 #M.left = X
 
-A.print_tree("preorder")
-A.print_tree("inorder")
-A.print_tree("postorder")
+A.print_tree()
+
 
 def is_balanced_binary_tree(tree: BinaryTreeNode) -> bool:
     BalancedStatusWithHeight = collections.namedtuple('BalancedStatusWithHeight', ('balanced', 'height'))
@@ -59,4 +58,4 @@ def is_balanced_binary_tree(tree: BinaryTreeNode) -> bool:
 
     return check_balanced(tree).balanced
 
-print(is_balanced_binary_tree(A))
+print("Binary Tree is height-balanced: " + str(is_balanced_binary_tree(A)))

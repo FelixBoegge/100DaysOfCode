@@ -17,7 +17,7 @@ class BinaryTreeNode:
 
     def preorder(self, traversal):
         if self:
-            traversal += "-" + self.data + "-"
+            traversal += "-" + str(self.data) + "-"
             if self.left:
                 traversal = self.left.preorder(traversal)
             if self.right:
@@ -31,18 +31,11 @@ class BinaryTreeNode:
                 traversal = self.left.postorder(traversal)
             if self.right:
                 traversal = self.right.postorder(traversal)
-            traversal += "-" + self.data + "-"
+            traversal += "-" + str(self.data) + "-"
         return traversal
 
 
-    def print_tree(self, print_type):
-        if print_type == "preorder":
-            print("Preorder: ".ljust(11) + self.preorder(""))
-        elif print_type == "inorder":
-            print("Inorder: ".ljust(11) + self.inorder(""))
-        elif print_type == "postorder":
-            print("Postorder: ".ljust(11) + self.postorder(""))
-        else:
-            print("Invalid print type")
-            return False
-
+    def print_tree(self):
+        print("Preorder: ".ljust(11) + self.preorder(""))
+        print("Inorder: ".ljust(11) + self.inorder(""))
+        print("Postorder: ".ljust(11) + self.postorder(""))
