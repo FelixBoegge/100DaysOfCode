@@ -41,3 +41,45 @@ class BinaryTreeNode:
         print("Preorder: ".ljust(11) + self.preorder(""))
         print("Inorder: ".ljust(11) + self.inorder(""))
         print("Postorder: ".ljust(11) + self.postorder(""))
+
+
+#     def depth(self):
+#         if self.left and self.right:
+#             return 1 + max(self.left.depth(), self.right.depth())
+#         return 1
+#
+#
+# A = BinaryTreeNode("A")
+# B = BinaryTreeNode("B")
+# C = BinaryTreeNode("C")
+# D = BinaryTreeNode("D")
+# E = BinaryTreeNode("E")
+# F = BinaryTreeNode("F")
+# G = BinaryTreeNode("G")
+# H = BinaryTreeNode("H")
+# I = BinaryTreeNode("I")
+# J = BinaryTreeNode("J")
+# K = BinaryTreeNode("K")
+# L = BinaryTreeNode("L")
+# M = BinaryTreeNode("M")
+# N = BinaryTreeNode("N")
+# O = BinaryTreeNode("O")
+# X = BinaryTreeNode("X")
+#
+# A.left = B
+# A.right = K
+# B.left = C
+# B.right = H
+# C.left = D
+# C.right = G
+# D.left = E
+# D.right = F
+# H.left = I
+# H.right = J
+# K.left = L
+# K.right = O
+# L.left = M
+# L.right = N
+# N.right = X
+#
+# print(N.depth())
